@@ -1,0 +1,8 @@
+.dataTableContainer {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    border-color: hsl(240, 3%, 24%);
+    margin-top: 16px;
+}

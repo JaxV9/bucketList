@@ -1,0 +1,16 @@
+.contentBodyContainerSlideActive {
+    margin-left: 250px;
+    transition: 0.5s all;
+    min-height: 100vh;
+    padding-top: 28px;
+    padding-left: 28px;
+}
+
+.contentBodyContainerSlideInactive {
+    margin-left: 0px;
+    transition: 0.5s all;
+    min-height: 100vh;
+    padding-top: 28px;
+    padding-left: 28px;
+    padding-right: 28px;
+}

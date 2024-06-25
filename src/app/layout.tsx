@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { NavBar } from "@/components/navBar/NavBar";
+import { Content } from "@/components/content/content"
+import { Providers } from "@/contexts/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Providers>
+          <NavBar isToggleProps={true} />
+          <Content>
+            {children}
+          </Content>
+        </Providers>
+      </body>
     </html>
   );
 }

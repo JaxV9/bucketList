@@ -1,0 +1,124 @@
+.navContainer {
+    position: absolute;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: #202020;
+    transition: 0.5s all;
+    border-right: 0.5px solid #78747479;
+    position: fixed;
+}
+
+.navContainerInactive {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #202020;
+    transform: translateX(-250px);
+    transition: 0.5s all;
+    border-right: 0.5px solid #78747479;
+    position: fixed;
+}
+
+.toggleNavBarActive, .toggleNavBarInactive {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 245px;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.toggleNavBarActive {
+    background-image: url('/assets/nav-arrow-left.svg');
+    transform: translateX(0px);
+    transition: 0.5s all;
+}
+
+.toggleNavBarInactive {
+    background-image: url('/assets/nav-arrow-right.svg');
+    transform: translateX(-250px);
+    transition: 0.5s all;
+}
+
+.navLinkContainer {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.navLink {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    width: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navLinkIcon {
+    width: 25px;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navLinkIcon > img {
+    max-height: 25px;
+}
+
+.navLinkText {
+    display: flex;
+}
+
+.navLinkBottomText {
+    text-align: center;
+    cursor: pointer;
+}
+
+.navLinkBottomText:hover {
+    color: #F44B40;
+}
+
+.navLinkText > span {
+    margin: auto;
+}
+
+.navLinkHover {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px
+}
+
+.navLinkHover:hover {
+    background-color: #6D2AFC;
+}
+
+.navLink > span {
+    display: block;
+}
+
+.navLinkBottomContainer {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.navLinkBottomContainer > span {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
