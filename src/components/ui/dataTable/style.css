@@ -1,8 +1,31 @@
 .dataTableContainer {
     width: 100%;
-    height: 500px;
+    height: 550px;
     border-radius: 8px;
     border: 1px solid #e5e7eb;
     border-color: hsl(240, 3%, 24%);
     margin-top: 16px;
+}
+
+.headDataTable {
+    height: 50px;
+    border-bottom: 1px solid #e5e7eb;
+    border-color: hsl(240, 3%, 24%);
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+
+.headDataTable > span {
+    margin: auto;
+}
+
+.dataTable {
+    height: 50px;
+    border-bottom: 1px solid #e5e7eb;
+    border-color: hsl(240, 3%, 24%);
+    display: flex;
+}
+
+.dataTable > span {
+    margin: auto;
 }
