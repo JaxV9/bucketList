@@ -9,15 +9,14 @@ const Habits = () => {
     const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 
     const [date, setDate] = React.useState<Date | undefined>(new Date())
+    const currentDay = new Date()
+    const today = days[Number(currentDay?.getDay())] + " " + currentDay?.getDate() + " " + months[Number(currentDay?.getMonth())] + " " + currentDay?.getFullYear()
 
-    const [tasks, setTasks] = useState<object[]>([])
 
     useEffect(() => {
         let test = date?.getDate()
         console.log(test)
     }, [date])
-
-
 
 
     return (
@@ -32,9 +31,12 @@ const Habits = () => {
                 />
                 <div className="dateHabitsContainer">
                     <span className="text-2xl mb-6 mt-0">
-                        {days[Number(date?.getDay())]} {date?.getDate()} {months[Number(date?.getMonth())]} {date?.getFullYear()}
+                        {
+                            date ? days[Number(date?.getDay())] + " " + date?.getDate() + " " + months[Number(date?.getMonth())] + " " + date?.getFullYear()
+                                : today
+                        }
                     </span>
-                    <DataTable dataProps={tasks}/>
+                    <DataTable dateProps={date ? date : new Date()} />
                 </div>
             </div>
         </>

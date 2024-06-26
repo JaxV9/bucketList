@@ -1,47 +1,74 @@
+import { Tag } from "@/components/ui/tag/tag"
+import { CheckboxUI } from "../checkbox/checkbox"
+import { EditUI } from "../edit/edit"
+import { Habit } from "@/components/habit/habit"
+import Link from "next/link"
+import { convertDateFormat } from "@/app/utils/formats"
 
 type DataTablePropsType = {
-    dataProps: object[]
+    dateProps: Date
 }
 
-export const DataTable = ({dataProps}:DataTablePropsType) => {
+type HabitPropsType = {
+    status: string,
+    frequency: string,
+    project: string,
+    task: string,
+    date: string
+}
 
-    return(
+export const DataTable = ({ dateProps }: DataTablePropsType) => {
+
+    const objects: HabitPropsType[] = [
+        {
+            "status": "en cours",
+            "frequency": "2x par semaine",
+            "project": "projet test",
+            "task": "première tâche",
+            "date": convertDateFormat(new Date().toString())
+        },
+        {
+            "status": "en cours",
+            "frequency": "2x par semaine",
+            "project": "projet test",
+            "task": "deuxième tâche",
+            "date": convertDateFormat(new Date().toString())
+        },
+        {
+            "status": "en cours",
+            "frequency": "2x par semaine",
+            "project": "projet test",
+            "task": "troisième tâche",
+            "date": convertDateFormat(new Date().toString())
+        }
+    ]
+
+    const filteredObjects = objects.filter((object) => object.date === convertDateFormat(dateProps.toString()));
+
+    return (
         <>
             <div className="dataTableContainer">
                 <div className="headDataTable">
-                    
-                    <span>Tâches</span>
+                    <CheckboxUI checkedProps={true} />
+                    <span>Statut</span>
+                    <span>Fréquence</span>
+                    <span>Projet</span>
+                    <span>Tâche</span>
+                    <span>Éditer</span>
                 </div>
-                <div className="dataTable">
-                    <span>Task 1</span>
-                </div>
-                <div className="dataTable">
-                    <span>Task 2</span>
-                </div>
-                <div className="dataTable">
-                    <span>Task 3</span>
-                </div>
-                <div className="dataTable">
-                    <span>Task 4</span>
-                </div>
-                <div className="dataTable">
-                    <span>Task 5</span>
-                </div>
-                <div className="dataTable">
-                    <span>Task 6</span>
-                </div>
-                <div className="dataTable">
-                    <span>Task 7</span>
-                </div>
-                <div className="dataTable">
-                    <span>Task 8</span>
-                </div>
-                <div className="dataTable">
-                    <span>Task 9</span>
-                </div>
-                <div className="dataTable">
-                    <span>Task 10</span>
-                </div>
+
+                {
+                    filteredObjects.length > 0 ?
+                        filteredObjects.map((object) => (
+                            <Habit statusProps={object.status}
+                                frequencyProps={object.frequency}
+                                projectProps={object.project}
+                                taskProps={object.task}
+                                isSelectedProps={true}
+                            />
+                        ))
+                        : null
+                }
             </div>
         </>
     )

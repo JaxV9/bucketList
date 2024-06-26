@@ -5,7 +5,10 @@
 @import url('../components/content/style.css');
 @import url('../components/navBar/style.css');
 @import url('../components/ui/dataTable/style.css');
-
+@import url('../components/ui/checkbox/style.css');
+@import url('../components/ui/tag/style.css');
+@import url('../components/ui/edit/style.css');
+@import url('../components/habit/style.css');
 
 @tailwind base;
   @tailwind components;

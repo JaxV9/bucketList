@@ -1,0 +1,17 @@
+.editUI {
+    width: 22px;
+    height: 22px;
+    margin: auto;
+    background-image: url('/assets/page-edit.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all ease 0.2s;
+}
+
+.editUI:hover {
+    opacity: 1;
+    transition: all ease 0.2s;
+}

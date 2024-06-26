@@ -1,0 +1,12 @@
+
+.habitRow {
+    height: 50px;
+    border-bottom: 1px solid #e5e7eb;
+    border-color: hsl(240, 3%, 24%);
+    display: grid;
+    grid-template-columns: 10% 10% 20% 20% 30% 10%;
+}
+
+.habitRow > span {
+    margin: auto;
+}

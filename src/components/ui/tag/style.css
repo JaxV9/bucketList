@@ -1,0 +1,10 @@
+.tagUI {
+    height: fit-content;
+    width: fit-content;
+    padding: 0px 16px;
+    background-color: #ffffffb4;
+    color: #191919;
+    font-size: 12px;
+    border-radius: 16px;
+    margin: auto;
+}
