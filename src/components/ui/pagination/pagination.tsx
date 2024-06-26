@@ -5,24 +5,27 @@ export const Pagination = () => {
 
     const [currentPage, setCurrentPage] = useState<number>(1)
 
-    const results = 30
+    const results = 3
 
     return (
         <>
             <div className="paginationContainer">
                 {
                     currentPage > 1 ?
-                        <div className="navPagination">Précédent</div>
+                        <div onClick={() => setCurrentPage(currentPage-1)} className="navPagination">Précédent</div>
                         :
                         <div></div>
                 }
                 <div className="navNumberContainer">
-                    <div className="navNumberFocus">1</div>
-                    <div className="navNumber">2</div>
+                    {
+                        Array.from({ length: results }, (_, index) => (
+                            <div onClick={() => setCurrentPage(index+1)} className={currentPage === index+1 ? "navNumberFocus" : "navNumber"}>{index + 1}</div>
+                        ))
+                    }
                 </div>
                 {
                     currentPage !== results ?
-                        <div className="navPagination">Suivant</div>
+                        <div onClick={() => setCurrentPage(currentPage+1)} className="navPagination">Suivant</div>
                         :
                         null
                 }
