@@ -1,0 +1,52 @@
+.paginationContainer {
+    width: 100%;
+    height: 50px;
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+.paginationContainer > div {
+    margin: auto;
+}
+
+.navNumberContainer {
+    display: flex;
+}
+
+.navPagination, .navPaginationPrev {
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+.navPaginationPrev {
+    margin-right: auto;
+}
+
+.navPagination:hover {
+    background-color: #343434;
+    transition: all ease 0.2s;
+}
+
+.navNumber {
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+.navNumber:hover {
+    background-color: #343434;
+    transition: all ease 0.2s;
+}
+
+.navNumberFocus {
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all ease 0.2s;
+    cursor: pointer;
+    background-color: #343434;
+    transition: all ease 0.2s;
+}

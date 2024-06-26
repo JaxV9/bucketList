@@ -4,6 +4,8 @@ import { EditUI } from "../edit/edit"
 import { Habit } from "@/components/habit/habit"
 import Link from "next/link"
 import { convertDateFormat } from "@/app/utils/formats"
+import { useState } from "react"
+import { Pagination } from "../pagination/pagination"
 
 type DataTablePropsType = {
     dateProps: Date
@@ -18,6 +20,12 @@ type HabitPropsType = {
 }
 
 export const DataTable = ({ dateProps }: DataTablePropsType) => {
+
+    const [allSelected, setAllSelected] = useState<boolean>(false)
+
+    const selectAll = () => {
+        setAllSelected(!allSelected)
+    }
 
     const objects: HabitPropsType[] = [
         {
@@ -49,7 +57,7 @@ export const DataTable = ({ dateProps }: DataTablePropsType) => {
         <>
             <div className="dataTableContainer">
                 <div className="headDataTable">
-                    <CheckboxUI checkedProps={true} />
+                    <CheckboxUI functionProps={selectAll} checkedProps={allSelected} />
                     <span>Statut</span>
                     <span>Fréquence</span>
                     <span>Projet</span>
@@ -64,12 +72,13 @@ export const DataTable = ({ dateProps }: DataTablePropsType) => {
                                 frequencyProps={object.frequency}
                                 projectProps={object.project}
                                 taskProps={object.task}
-                                isSelectedProps={true}
+                                isSelectedProps={allSelected}
                             />
                         ))
                         : null
                 }
             </div>
+            <Pagination />
         </>
     )
 }

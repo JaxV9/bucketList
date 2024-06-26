@@ -9,6 +9,7 @@
 @import url('../components/ui/tag/style.css');
 @import url('../components/ui/edit/style.css');
 @import url('../components/habit/style.css');
+@import url('../components/ui/pagination/style.css');
 
 @tailwind base;
   @tailwind components;
